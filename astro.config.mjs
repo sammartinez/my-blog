@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // Replace with your GitHub Pages URL:
 // https://<your-username>.github.io  (for user/org site)
 // https://<your-username>.github.io/<repo-name>  (for project site)
-const SITE_URL = 'https://your-username.github.io';
+const SITE_URL = 'https://sammartinez.github.io';
 
 // If deploying to a project site (not a user/org site), set the base path:
 // e.g. '/my-blog' for https://your-username.github.io/my-blog
