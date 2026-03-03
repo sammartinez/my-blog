@@ -1,11 +1,11 @@
 ---
-title: 'Hello World — My First Post'
+title: 'My Journey With — My First Post'
 description: 'Welcome to my new blog built with Astro. Here is what to expect and why I started writing.'
-pubDate: '2024-01-15'
-tags: ['meta', 'writing']
+pubDate: '2026-03-02'
+tags: ['meta', 'writing', 'overthinking']
 ---
 
-Welcome! This is the first post on my new blog. I built this site with [Astro](https://astro.build) and deployed it to GitHub Pages — more on that setup in a future post.
+Welcome! This is the first post on my new blog: My Journey With. I built this site with [Astro](https://astro.build) and deployed it to GitHub Pages.
 
 ## Why a blog?
 
@@ -13,9 +13,10 @@ I've been meaning to write more for a while. Having a dedicated place to put tho
 
 Topics I plan to cover:
 
-- Web development and things I'm building
-- Tools and workflows I find useful
-- Interesting things I read or stumble across
+- Life
+- Music
+- Career
+- Whatever sparks an idea
 
 ## The setup
 
