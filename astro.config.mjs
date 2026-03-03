@@ -9,7 +9,7 @@ const SITE_URL = 'https://sammartinez.github.io';
 
 // If deploying to a project site (not a user/org site), set the base path:
 // e.g. '/my-blog' for https://your-username.github.io/my-blog
-const BASE_PATH = '/'; // Change to '/repo-name' for project sites
+const BASE_PATH = '/my-blog'; // Change to '/repo-name' for project sites
 
 export default defineConfig({
   site: SITE_URL,
