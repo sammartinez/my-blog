@@ -1,4 +1,4 @@
-# My Blog
+# My Blog: My Journey With
 
 A personal blog built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
