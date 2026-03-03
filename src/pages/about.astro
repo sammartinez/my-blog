@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="About" description="About this blog and its author.">
+  <div class="container page">
+    <h1>About</h1>
+    <div class="prose">
+      <p>
+        Hi! I'm a developer / writer / curious person who made this blog to share
+        things I'm learning, thinking about, and building.
+      </p>
+      <p>
+        This site is built with <a href="https://astro.build">Astro</a> and
+        deployed on GitHub Pages. The source is available on
+        <a href="https://github.com/your-username/my-blog" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+      <h2>What you'll find here</h2>
+      <p>
+        A mix of technical writing, tutorials, and personal essays. No particular schedule —
+        I write when I have something worth saying.
+      </p>
+      <h2>Get in touch</h2>
+      <p>
+        The best way to reach me is on <a href="https://github.com/sammartinez" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    max-width: 640px;
+  }
+
+  h1 { margin-bottom: 2rem; }
+</style>

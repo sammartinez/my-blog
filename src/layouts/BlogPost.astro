@@ -1,0 +1,107 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const { frontmatter } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags = [] } = frontmatter;
+---
+<BaseLayout title={title} description={description} image={heroImage} article>
+  <article class="container">
+    <header class="post-header">
+      {heroImage && (
+        <div class="hero-image">
+          <img src={heroImage} alt={title} />
+        </div>
+      )}
+      <div class="post-meta">
+        <FormattedDate date={pubDate} />
+        {updatedDate && (
+          <span class="updated">
+            &nbsp;· Updated <FormattedDate date={updatedDate} />
+          </span>
+        )}
+      </div>
+      <h1 class="post-title">{title}</h1>
+      {description && <p class="post-description">{description}</p>}
+      {tags.length > 0 && (
+        <div class="tags">
+          {tags.map((tag: string) => (
+            <a href={`/tags/${tag}`} class="tag">{tag}</a>
+          ))}
+        </div>
+      )}
+      <hr />
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <footer class="post-footer">
+      <hr />
+      <a href="/blog" class="back-link">← All posts</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-image {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .post-meta {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--color-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .updated { color: var(--color-ink-faint); }
+
+  .post-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .post-description {
+    font-size: 1.1rem;
+    color: var(--color-ink-muted);
+    margin-bottom: 1.25rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--color-accent);
+    opacity: 1;
+  }
+</style>

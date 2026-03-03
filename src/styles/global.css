@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-ink: #1a1814;
+  --color-ink-muted: #6b6560;
+  --color-ink-faint: #b5b0ab;
+  --color-accent: #cc6958;
+  --color-accent-light: #f0e8e6;
+  --color-border: #e8e4df;
+  --color-code-bg: #f4f2ef;
+
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --max-width: 720px;
+  --max-width-wide: 1100px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-top: 2.5rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1.25rem; }
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s;
+}
+a:hover { opacity: 0.75; }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2.5rem 0;
+}
+
+/* ---- Code ---- */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--color-code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--color-accent);
+}
+
+pre {
+  background: #1e1e1e !important;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ---- Blockquote ---- */
+blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--color-ink-muted);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* ---- Lists ---- */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+li { margin-bottom: 0.35rem; }
+
+/* ---- Images ---- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ---- Utility ---- */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.container-wide {
+  max-width: var(--max-width-wide);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* ---- Tag pill ---- */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2em 0.7em;
+  border-radius: 20px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+.tag:hover {
+  background: var(--color-accent);
+  color: white;
+  opacity: 1;
+}
+
+/* ---- Prose wrapper ---- */
+.prose {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
