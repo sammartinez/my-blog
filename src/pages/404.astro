@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="code">404</p>
     <h1>Page not found</h1>
     <p>The page you're looking for doesn't exist or has been moved.</p>
-    <a href="/" class="home-link">← Back to home</a>
+    <a href={import.meta.env.BASE_URL} class="home-link">← Back to home</a>
   </div>
 </BaseLayout>
 

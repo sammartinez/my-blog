@@ -5,12 +5,14 @@ import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map(post => ({
-    params: { slug: post.id },
+    // Strip the file extension from post.id (e.g. "hello-world.md" → "hello-world")
+    params: { slug: post.id.replace(/\.(md|mdx)$/, '') },
     props: post,
   }));
 }
 
 const post = Astro.props;
+// Astro v5: render() is a named import, not a method on the entry
 const { Content } = await render(post);
 ---
 <BlogPost frontmatter={post.data}>

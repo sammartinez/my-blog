@@ -11,10 +11,14 @@ interface Props {
 }
 
 const { title, description, pubDate, slug, tags = [], heroImage } = Astro.props;
+
+// Build a base-aware URL so links work on both user sites (/) and project sites (/repo-name)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const postUrl = `${base}/blog/${slug}`;
 ---
 <article class="post-card">
   {heroImage && (
-    <a href={`/blog/${slug}`} class="card-image-link" tabindex="-1" aria-hidden="true">
+    <a href={postUrl} class="card-image-link" tabindex="-1" aria-hidden="true">
       <img src={heroImage} alt="" class="card-image" loading="lazy" />
     </a>
   )}
@@ -23,7 +27,7 @@ const { title, description, pubDate, slug, tags = [], heroImage } = Astro.props;
       <FormattedDate date={pubDate} />
     </div>
     <h2 class="card-title">
-      <a href={`/blog/${slug}`}>{title}</a>
+      <a href={postUrl}>{title}</a>
     </h2>
     <p class="card-description">{description}</p>
     {tags.length > 0 && (
